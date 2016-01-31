@@ -93,10 +93,11 @@ article {
 	line-height: 35px;
 	margin: auto;
 	color: white;
+	font-size: 0.8em;
 }
 .site-footer p {
 	display: inline-block;
-	font-size: 0.8em;
+
 }
 
 
@@ -117,20 +118,20 @@ article {
 	display: inline-block;
 }
 .menu-item:hover a{
-	color: #bcade5;
+	color: #b8a0ff;
 }
 .menu-item:after {
 	content: '';
 	position: relative;
 	display: block;
-	top: -5px;
+	top: -3px;
 	width: 100%;
 	height: 2px;
 	transition: 0.3s cubic-bezier(.29,.76,.51,1.5);
 	transform: scaleX(0);
 }
 .menu-item:hover:after {
-	background: #bcade5;
+	background: #b8a0ff;
 	transform: scaleX(1);
 }
 .menu-item>a {
@@ -138,7 +139,9 @@ article {
 	padding: 5px 20px;
 	font-size: 1.2em;
 }
-
+.menu-current a{
+	color: #b8a0ff !important;
+}
 
 
 
@@ -146,3 +149,60 @@ article {
 	text-decoration: none;
 	font-size: 1.8em;
 }
+
+
+
+/*Crew.html division --------------------------------------------------------------------------------------------------*/
+
+.member-container {
+	background: #3f3f3f;
+	display: inline-flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+	margin: 25px;
+	padding: 15px;
+	height: 280px;
+}
+.member-avatar {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+
+
+/*media buttons styles -----------------------------------------------------*/
+
+.fa {
+	font-size: 1.7em !important;
+	color: white;
+	transition: 0.2s linear;
+}
+.fa-vk:hover {
+	color: #537599;
+}
+.fa-instagram:hover {
+	color: #3f729b;
+}
+.fa-github:hover {
+	color: #4183c4;
+}
+.fa-steam:hover {
+	color: #c8c8c8;
+}
+.fa-trello:hover {
+	color: #0079bf;
+}
+
+/*media buttons styles -----------------------------------------------------*/
+
+.member-container b {
+	color: #775ac9;
+}
+
+.member-container p {
+	color: white;
+}
+
+
+/*Crew.html division --------------------------------------------------------------------------------------------------*/
