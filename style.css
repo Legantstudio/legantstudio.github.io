@@ -163,6 +163,7 @@ article {
 	margin: 25px;
 	padding: 15px;
 	height: 280px;
+	min-width: 250px;
 }
 .member-avatar {
 	width: 200px;
@@ -186,9 +187,6 @@ article {
 }
 .fa-github:hover {
 	color: #4183c4;
-}
-.fa-steam:hover {
-	color: #c8c8c8;
 }
 .fa-trello:hover {
 	color: #0079bf;
