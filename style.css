@@ -204,3 +204,44 @@ article {
 
 
 /*Crew.html division --------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*labors.html division ------------------------------------------------------------------------------------------------*/
+.site-content-labors {
+	margin: 100px auto;
+	width: 100%;
+	padding: 25px;
+	background: white;
+}
+.site-content-labors > section{
+	width: 960px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: auto;
+}
+.site-example {
+	display: flex;
+	margin: 10px 0;
+	padding: 10px;
+	background: #3F3F3F none repeat scroll 0% 0%;
+}
+.site-example section {
+	margin-left: 20px;
+}
+.site-example-title a{
+	color: #775AC9;
+}
+.site-example-description {
+	color: white;
+}
+
+/*labors.html division ------------------------------------------------------------------------------------------------*/
