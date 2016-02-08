@@ -1,11 +1,11 @@
 /*I dont know why, but (::sel, ::-moz-sel {}) isnt working*/
 ::-moz-selection{
 	background: #775ac9;
-	color: white;
+	/*color: white;*/
 }
 ::selection{
 	background: #775ac9;
-	color: white;
+	/*color: white;*/
 }
 
 
@@ -15,18 +15,47 @@ body {
 }
 
 
-a {
+.site-content a {
+	display: inline-block;
 	color: #60b6ff;
 	text-decoration: none;
 	transition: 0.3s cubic-bezier(.29,.76,.51,1.5);
 }
-a:hover {
+.site-content a:hover {
 	color: #8fccff;
 }
 
+.site-content a:before {
+	content: '';
+	position: relative;
+	display: block;
+	top: 24px;
+	width: 100%;
+	height: 1px;
+	transition: 0.3s ease-out;
+	background: #8fccff;
+	transform: translateX(-50%) scaleX(0);
+}
+.site-content a:hover:before {
+	transform: translateX(-25%) scaleX(0.5);
+}
+.site-content a:after {
+	content: '';
+	/*position: relative;*/
+	display: block;
+	top: -1px;
+	width: 100%;
+	height: 1px;
+	transition: 0.3s ease-out;
+	background: #8fccff;
+	transform: translateX(50%) scaleX(0);
+}
+.site-content a:hover:after {
+	transform: translateX(25%) scaleX(0.5);
+}
 
 .site {
-	background: linear-gradient(to top right, #ffe29e, #e9ef8f);
+	background: #3f3f3f;
 	display: flex;
 	flex-direction: column;
 	align-content: space-between;
@@ -34,16 +63,14 @@ a:hover {
 	font-family: 'Open Sans', sans-serif;
 }
 .header-title {
-	color: #bcade5;
+	color: #775ac9;
 	font-weight: normal;
+	font-size: 2.3em;
 	margin: 0;
 }
 .site-header {
+	margin-top: 20px;
 	background: #3f3f3f;
-	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
-/*	display: flex;
-	justify-content: center;
-	align-items: center;*/
 }
 .header-container{
 	display: flex;
@@ -74,10 +101,10 @@ a:hover {
 .site-content {
 	display: flex;
 	justify-content: center;
-	background: #fff;
+	/*background: #fff;*/
+	color: white;
 	flex: 1 0 auto;
 	margin: 100px auto;
-	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
 	width: 100%;
 }
 article {
@@ -120,7 +147,8 @@ article {
 .menu-item:hover a{
 	color: #b8a0ff;
 }
-.menu-item:after {
+
+/*.menu-item:after {
 	content: '';
 	position: relative;
 	display: block;
@@ -133,11 +161,45 @@ article {
 .menu-item:hover:after {
 	background: #b8a0ff;
 	transform: scaleX(1);
+}*/
+
+
+.menu-item a:after {
+	content: '';
+	position: relative;
+	display: block;
+	top: 1px;
+	width: 100%;
+	height: 1px;
+	transition: 0.3s ease-out;
+	background: #b8a0ff;
+	transform: translateX(75%) scaleX(0);
 }
+.menu-item a:hover:after {
+	transform: translateX(0) scaleX(1);
+}
+.menu-item a:before {
+	content: '';
+	position: relative;
+	display: block;
+	top: 2px;
+	width: 100%;
+	height: 1px;
+	transition: 0.3s ease-out;
+	background: #b8a0ff;
+	transform: translateX(-75%) scaleX(0);
+}
+.menu-item a:hover:before {
+	transform: translateX(0) scaleX(1);
+}
+
+
+
 .menu-item>a {
 	display: inline-block;
 	padding: 5px 20px;
 	font-size: 1.2em;
+	transition: 0.3s ease-out;
 }
 .menu-current a{
 	color: #b8a0ff !important;
