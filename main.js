@@ -1,17 +1,18 @@
+// Getting random number for moving
 function getRandomInt(min, max)
 {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 var size = 50;
-var Xdef = 485.5;
-var Ydef = 657;
+const Xdef = 485.5;
+const Ydef = 657;
 var X = 485.5;
 var Y = 657;
 var counter = 0;
 var block = document.getElementById("block");
 var scoreline = document.getElementById("scr");
-var mana = 4;
+var mana = 0;
 var manaline = document.getElementById("mana");
 
 
@@ -58,7 +59,7 @@ function ResetPos(){
 function Win(){	
 	setTimeout(function(){clearInterval(timerID);});
 	setTimeout(function(){clearInterval(timerID2);});
-	alert("You're winnner!"+"Your score: "+counter+"points");
+	alert("You're winnner! "+" Your score: "+counter+" points");
 }
 function Move() {
 	
@@ -72,10 +73,10 @@ function Move() {
 	switch (Rint) {
 		// left
 		case 0: X -= size; break; 
-		// right
-		case 1: X += size; break;
 		// up
-		case 2: Y -= size; break;
+		case 1: Y -= size; break;
+		// right
+		case 2: X += size; break;
 		// down
 		case 3: Y += size;
 	}
@@ -83,25 +84,32 @@ function Move() {
 	block.style.right = Y+"px";
 
 	// Teleport if player out of viewscreen
-
+	if ((parseInt(block.style.top) < 35.5) || (parseInt(block.style.top) > 935.5) || (parseInt(block.style.right) > 1857) || (parseInt(block.style.right) < 7)) {
+		ResetPos();
+	}
 	// Win if player in the finish
-	if ((X == 85.5) && (Y == 107)) {
+	if ((block.style.top == 85.5+"px") && (block.style.right == 1107+"px")) {
 		Win();
 	}
 }
 function UserMove(evt) {
-		if (mana > 0) {
+		if ((mana > 0) && (document.getElementById("start-btn").style.display == "none")) {
 			mana--;
-			// setTimeout(function(){clearInterval(timerID);});
 			switch (evt.which) {
-			case 37: X -= size; break;
-			case 38: Y -= size; break;
-			case 39: X += size; break;
-			case 40: Y += size;
+				// left
+			case 37: Y += size; counter++; break;
+				// up
+			case 38: X -= size; counter++; break;
+				// right
+			case 39: Y -= size; counter++; break;
+				// down
+			case 40: X += size; counter++;
+			}
 			block.style.top = X+"px";
-			block.style.right = Y+"px";
-			// timerID = setInterval(function(){Move()}, 500);
-			
-		}	
+			block.style.right = Y+"px";					
+	}
+		// Win if player in the finish
+	if ((block.style.top == 85.5+"px") && (block.style.right == 1107+"px")) {
+		Win();
 	}
 }
