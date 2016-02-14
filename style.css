@@ -206,7 +206,9 @@ article {
 	background: #3a3a3a;
 	margin: 20px;
 }
-
+.language-switch-button img {
+	width: 25px;
+}
 /*Crew.html division --------------------------------------------------------------------------------------------------*/
 
 .site-content-crew {
