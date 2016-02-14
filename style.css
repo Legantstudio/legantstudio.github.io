@@ -208,6 +208,7 @@ article {
 }
 .language-switch-button a img {
 	width: 25px;
+	image-rendering: optimizeSpeed;
 }
 /*Crew.html division --------------------------------------------------------------------------------------------------*/
 
